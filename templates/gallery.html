@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/gallery/t2.JPG')}}" type="image/x-icon">
+
+    <title>Έργα</title>
+
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap-5.0.2-dist/css/bootstrap.min.css')}}">
+    <script src="{{url_for('static', filename='bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')}}"></script>
+
+     <!--lightbox-->
+    <link href="{{url_for('static', filename='lightbox2-2.11.3/src/css/lightbox.css')}}" rel="stylesheet" />
+    <script src="{{url_for('static', filename='lightbox2-2.11.3/src/js/lightbox.js')}}"></script>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='mycss.css')}}">
+</head>
+<body>
+<div class="acordeon_menu">
+        <a name="a1" href="{{url_for('index')}}">Αρχική</a><br>
+        <a name="a2" href="{{url_for('bio')}}">Βιογραφικό</a><br>
+        <a name="a3" href="{{url_for('gallery')}}">Έργα</a><br>
+        <a name="a4" href="{{url_for('contact')}}">Επικοινωνία</a><br>
+        <span id="l1" class="lang"></span>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+    <div class="col right-text topnav">
+        <a name="t1" href="{{url_for('index')}}">Αρχική</a>
+        <a name="t2" href="{{url_for('bio')}}">Βιογραφικό</a>
+        <a name="t3" href="{{url_for('gallery')}}">Έργα</a>
+        <a name="t4" href="{{url_for('contact')}}">Επικοινωνία</a>
+        <span id="l2" class="lang" style="cursor: pointer"></span>
+        <span id="btn" class="icon_menu"> <i class="material-icons" style="font-size:48px; color: #bfbfbf">reorder</i></span>
+
+    </div>
+    <div class="col right-text">
+         <a href="{{url_for('index')}}"><h3 id="title">Όλγα Νικολοπούλου</h3></a>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 50px">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+
+      <div class="gallery_menu">
+          <span id="a" >Ζωγραφική</span>
+          <span id="b" >Χαρακτικά</span>
+          <span id="c" >Σχέδια</span>
+          <span id="e" >Βιβλία</span>
+      </div>
+
+
+      <!--paintings-->
+            <!--flowers-->
+             <div class="img_row">
+              <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/f1.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f1.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/f5.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f5.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/f9.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f9.JPG')}}" style="width:100%"></a>
+                  </div>
+              </div>
+
+              <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/f2.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f2.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/f6.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f6.JPG')}}" style="width:100%"></a>
+                   <a href="{{url_for('static', filename='images/gallery/f10.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f10.JPG')}}" style="width:100%"></a>
+                  </div>
+              </div>
+              <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/f3.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f3.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/f7.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f7.JPG')}}" style="width:100%"></a>
+                  </div>
+               </div>
+               <div class="column" >
+                   <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/f4.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f4.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/f8.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/f8.JPG')}}" style="width:100%"></a>
+                   </div>
+              </div>
+
+                <!--chaplet-->
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/st6.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/st7.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/st11.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/st11.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/st8.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/st8.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/st12.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/st12.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/st9.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/st9.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/st10.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/st10.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+
+                 <!--trees-->
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/t1.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t1.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t5.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t5.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t9.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t9.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/t2.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t2.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t6.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t6.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t10.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t10.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/t3.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t3.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t7.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t7.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t11.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t11.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/t4.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t4.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t8.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t8.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/t12.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/t12.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+
+                 <!--pomegranates-->
+                <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/r1.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r1.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r5.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r5.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r9.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r9.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r13.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r13.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/r2.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r2.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r6.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r6.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r10.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r10.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/r3.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r3.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r7.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r7.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r11.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r11.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/r4.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r4.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r8.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r8.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/r12.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/r12.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+
+                 <!--birds-->
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/b1.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/b1.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/b2.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/b2.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                  <a href="{{url_for('static', filename='images/gallery/b3.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/b3.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="paintings">
+                      <a href="{{url_for('static', filename='images/gallery/b4.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/b4.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+
+
+                 <!--books-->
+                <div class="column">
+                  <div class="books">
+                  <a href="{{url_for('static', filename='images/books/b1.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b1.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/books/b5.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b5.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/books/b9.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b9.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="books">
+                  <a href="{{url_for('static', filename='images/books/b2.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b2.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/books/b6.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b6.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/b10.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b10.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="books">
+                  <a href="{{url_for('static', filename='images/books/b3.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b3.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/books/b7.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b7.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/books/b11.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b11.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="books">
+                  <a href="{{url_for('static', filename='images/books/b4.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b4.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/books/b8.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/books/b8.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <!--------------------------------------------------end of books------------------------------------------------------------------------>
+
+                     <!--engraving-->
+                <div class="column">
+                  <div class="engraving">
+                  <a href="{{url_for('static', filename='images/engraving/x1.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/engraving/x1.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/engraving/x5.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/engraving/x5.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="engraving">
+                  <a href="{{url_for('static', filename='images/engraving/x2.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/engraving/x2.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/engraving/x6.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/engraving/x6.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="engraving">
+                  <a href="{{url_for('static', filename='images/engraving/x3.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/engraving/x3.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="engraving">
+                  <a href="{{url_for('static', filename='images/engraving/x4.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/engraving/x4.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <!--------------------------------------------------end of engraving------------------------------------------------------------------------>
+
+                    <!--drawing-->
+                 <div class="column">
+                  <div class="drawing">
+                  <a href="{{url_for('static', filename='images/gallery/s1.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/s1.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/s5.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/s5.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="drawing">
+                  <a href="{{url_for('static', filename='images/gallery/s2.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/s2.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/s6.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/s6.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="drawing">
+                  <a href="{{url_for('static', filename='images/gallery/s3.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/s3.JPG')}}" style="width:100%"></a>
+                  <a href="{{url_for('static', filename='images/gallery/s7.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/s7.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+                 <div class="column">
+                  <div class="drawing">
+                  <a href="{{url_for('static', filename='images/gallery/s4.JPG')}}" data-lightbox="mygallery"><img class="ergo" src="{{url_for('static', filename='images/gallery/s4.JPG')}}" style="width:100%"></a>
+                  </div>
+                 </div>
+
+                 <!--------------------------------------------------end of drawing------------------------------------------------------------------------>
+
+
+           </div><!--img_row-->
+
+
+
+
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+$.getJSON('/check_lang',
+                function(data) {
+                  if(data == "gr"){
+                  $(".lang").text("en");
+                        gr();
+                  }//if
+                  else if(data == "en"){
+                  $(".lang").text("gr");
+                     en();
+                  }//elif
+            });//ajax
+
+$(".paintings").fadeIn(3000);
+
+/* Acordeon menu*/
+var menu = $(".acordeon_menu")
+x = false;
+$("#btn").click(function() {
+
+    if (x == false){
+    menu.show("slow");
+    x = true;
+    }
+    if (x == true){
+    menu.hide();
+    x = false;
+    }
+
+});//click
+
+$(".gallery_menu > span").click(function() {
+m = this.id;
+if (m == "a"){
+      $(".paintings").fadeIn(3000);
+      $(".books, .engraving, .drawing").hide();
+}//if
+else if (m == "b") {
+      $(".engraving").fadeIn(3000);
+      $(".paintings, .books, .drawing").hide();
+}
+else if (m == "c") {
+      $(".drawing").fadeIn(3000);
+      $(".paintings, .engraving, .books").hide();
+}
+else if (m == "e") {
+      $(".books").fadeIn(3000);
+      $(".paintings, .engraving, .drawing").hide();
+}
+
+});
+
+
+var span = $(".close");
+
+span.click(function() {
+  modal.css("display", "none");});
+
+$(".lang").click(function() {
+$.getJSON('/change_lang',
+                function(data) {
+                  if(data == "gr"){
+                     $(".lang").text("gr");
+                        en();
+                  }//if
+
+                  else if(data == "en"){
+                     $(".lang").text("en");
+                     gr();
+                  }//elif
+            });//ajax
+
+});//click
+function en(){
+$('#title').text("Olga Nikolopoulou");
+$('a[name="a1"]').text("Main");
+$('a[name="a2"]').text("Resume");
+$('a[name="a3"]').text("Gallery");
+$('a[name="a4"]').text("Contact");
+
+$('a[name="t1"]').text("Main");
+$('a[name="t2"]').text("Resume");
+$('a[name="t3"]').text("Gallery");
+$('a[name="t4"]').text("Contact");
+
+$("#a").text("Paintings");
+$("#b").text("Engraving");
+$("#c").text("Drawing");
+$("#e").text("Books");
+}
+
+function gr(){
+$('#title').text("Όλγα Νικολοπούλου");
+$('a[name="a1"]').text("Αρχική");
+$('a[name="a2"]').text("Βιογραφικό");
+$('a[name="a3"]').text("Έργα");
+$('a[name="a4"]').text("Επικοινωνία");
+
+$('a[name="t1"]').text("Αρχική");
+$('a[name="t2"]').text("Βιογραφικό");
+$('a[name="t3"]').text("Έργα");
+$('a[name="t4"]').text("Επικοινωνία");
+
+$("#a").text("Ζωγραφική");
+$("#b").text("Χαρακτικά");
+$("#c").text("Σχέδια");
+$("#e").text("Βιβλία");
+}
+
+});//ready
+</script>
+
+
+</body>
+</html>

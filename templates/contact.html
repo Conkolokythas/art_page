@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/gallery/t2.JPG')}}" type="image/x-icon">
+
+    <title>Επικοινωωία</title>
+
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap-5.0.2-dist/css/bootstrap.min.css')}}">
+    <script src="{{url_for('static', filename='bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')}}"></script>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='mycss.css')}}">
+</head>
+<body>
+<div class="acordeon_menu">
+        <a name="a1" href="{{url_for('index')}}">Αρχική</a><br>
+        <a name="a2" href="{{url_for('bio')}}">Βιογραφικό</a><br>
+        <a name="a3" href="{{url_for('gallery')}}">Έργα</a><br>
+        <a name="a4" href="{{url_for('contact')}}">Επικοινωνία</a><br>
+        <span id="l1" class="lang"></span>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+    <div class="col right-text topnav">
+        <a name="t1" href="{{url_for('index')}}">Αρχική</a>
+        <a name="t2" href="{{url_for('bio')}}">Βιογραφικό</a>
+        <a name="t3" href="{{url_for('gallery')}}">Έργα</a>
+        <a name="t4" href="{{url_for('contact')}}">Επικοινωνία</a>
+        <span id="l2" class="lang" style="cursor: pointer"></span>
+        <span id="btn" class="icon_menu"> <i class="material-icons" style="font-size:48px; color: #bfbfbf">reorder</i></span>
+
+    </div>
+    <div class="col right-text">
+         <a href="{{url_for('index')}}"><h3 id="title">Όλγα Νικολοπούλου</h3></a>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 50px">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+      <h3>Επικοινωνία</h3>
+    <div class="col-10" style="margin-top: 30px">
+        <dl>
+        <dd><p><i class="material-icons" style="font-size:24px">email</i> polyedropatra1@gmail.com</p></dd>
+        <dd><p><i class="material-icons" style="font-size:26px">call</i> 2610 277 342</p><dd>
+        <dd><p> <a href="https://el-gr.facebook.com/people/%CE%9F%CE%BB%CE%B3%CE%B1-%CE%9D%CE%B9%CE%BA%CE%BF%CE%BB%CE%BF%CF%80%CE%BF%CF%85%CE%BB%CE%BF%CF%85/100004534667118/" ><i class="fa fa-facebook-official" style="font-size:24px"></i></a></p><dd>
+        </dl>
+    </div>
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+
+$.getJSON('/check_lang',
+                function(data) {
+                  if(data == "gr"){
+                  $(".lang").text("en");
+                        gr();
+                  }//if
+                  else if(data == "en"){
+                  $(".lang").text("gr");
+                     en();
+                  }//elif
+            });//ajax
+
+/* Acordeon menu*/
+var menu = $(".acordeon_menu")
+x = false;
+$("#btn").click(function() {
+
+    if (x == false){
+    menu.show("slow");
+    x = true;
+    }
+    if (x == true){
+    menu.hide();
+    x = false;
+    }
+
+});//click
+
+$(".lang").click(function() {
+$.getJSON('/change_lang',
+                function(data) {
+                  if(data == "gr"){
+                     $(".lang").text("gr");
+                        en();
+                  }//if
+
+                  else if(data == "en"){
+                     $(".lang").text("en");
+                     gr();
+                  }//elif
+            });//ajax
+
+});//click
+function en(){
+$('#title').text("Olga Nikolopoulou");
+$('a[name="a1"]').text("Main");
+$('a[name="a2"]').text("Resume");
+$('a[name="a3"]').text("Gallery");
+$('a[name="a4"]').text("Contact");
+
+$('a[name="t1"]').text("Main");
+$('a[name="t2"]').text("Resume");
+$('a[name="t3"]').text("Gallery");
+$('a[name="t4"]').text("Contact");
+}
+
+function gr(){
+$('#title').text("Όλγα Νικολοπούλου");
+$('a[name="a1"]').text("Αρχική");
+$('a[name="a2"]').text("Βιογραφικό");
+$('a[name="a3"]').text("Έργα");
+$('a[name="a4"]').text("Επικοινωνία");
+
+$('a[name="t1"]').text("Αρχική");
+$('a[name="t2"]').text("Βιογραφικό");
+$('a[name="t3"]').text("Έργα");
+$('a[name="t4"]').text("Επικοινωνία");
+}
+
+});//ready
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/gallery/t2.JPG')}}" type="image/x-icon">
+
+    <title>Βιογραφικό</title>
+
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap-5.0.2-dist/css/bootstrap.min.css')}}">
+    <script src="{{url_for('static', filename='bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')}}"></script>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='mycss.css')}}">
+</head>
+<style>
+    li{
+    margin-top: 5px;
+    }
+</style>
+<body>
+<div class="acordeon_menu">
+        <a name="a1" href="{{url_for('index')}}">Αρχική</a><br>
+        <a name="a2" href="{{url_for('bio')}}">Βιογραφικό</a><br>
+        <a name="a3" href="{{url_for('gallery')}}">Έργα</a><br>
+        <a name="a4" href="{{url_for('contact')}}">Επικοινωνία</a><br>
+        <span id="l1" class="lang"></span>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+    <div class="col right-text topnav">
+        <a name="t1" href="{{url_for('index')}}">Αρχική</a>
+        <a name="t2" href="{{url_for('bio')}}">Βιογραφικό</a>
+        <a name="t3" href="{{url_for('gallery')}}">Έργα</a>
+        <a name="t4" href="{{url_for('contact')}}">Επικοινωνία</a>
+        <span id="l2" class="lang" style="cursor: pointer"></span>
+        <span id="btn" class="icon_menu"> <i class="material-icons" style="font-size:48px; color: #bfbfbf">reorder</i></span>
+
+    </div>
+    <div class="col right-text">
+         <a href="{{url_for('index')}}"><h3 id="title">Όλγα Νικολοπούλου</h3></a>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 50px">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+    <div class="col-10">
+        <img id="olga" style="display: none"  width="250" height="250" src="{{url_for('static', filename='images/olga.JPG')}}">
+            <p class="bio_p">Η Όλγα Νικολοπούλου γεννήθηκε στην Πάτρα. Σπούδασε γραφικές τέχνες στη Σχολή Δοξιάδη και έκανε
+               ζωγραφική στην Αθήνα, δίπλα στο Βρασίδα Βλαχόπουλο και στην Ομάδα για την Επικοινωνία και Εκπαίδευση στην
+               Τέχνη. Από το 1981 έχει ιδρύσει το Πολύεδρο μαζί με τον Κώστα Καπέλλα. Έχει συμμετάσχει σε ομαδικές
+               εκθέσεις.</p>
+        <h4>Σπουδές</h4>
+        <ul>
+          <li id="std1">Γραφικές Τέχνες στη Θ΄ΜΔΤΣ Αθηνων (πρόην Δοξιάδη)</li>
+          <li id="std2">"Διοίκηση πολιτισμικών Μονάδων" Ελληνικό Ανοικτό Πανεπιστήμιο</li>
+        </ul>
+
+        <h4>Εκθέσεις</h4>
+        <ul>
+           <li id="exh1">Όλγα Νικολοπούλου - Εικαστικό κόσμημα 2005</li>
+           <li id="exh2">Όλγα Νικολοπούλου "Πάτρα 1994. Σύντομη περιδιάβαση στην πολη" 4-2-1994</li>
+           <li id="exh3">Γραμμένος Κορνήλιος, Ζυγομαλάς Χρήστος, Κορμεντζά Δήμητρα, Μπακάλου Παρασκευή, Μπενετάτου Νότα, Νικολοπούλου Όλγα, Οικονομίδου Φλωρεντία 1992</li>
+           <li id="exh4">Κολοκοτσά Αναστασία-Νικολοπούλου Όλγα- Τερξής Νίκος Φεβρουάριος 1990</li>
+        </ul>
+    </div>
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+
+$.getJSON('/check_lang',
+                function(data) {
+                  if(data == "gr"){
+                  $(".lang").text("en");
+                        gr();
+                  }//if
+                  else if(data == "en"){
+                  $(".lang").text("gr");
+                     en();
+                  }//elif
+            });//ajax
+
+/*Image fade*/
+$("#olga").fadeIn(3000);
+
+/* Acordeon menu*/
+var menu = $(".acordeon_menu")
+x = false;
+$("#btn").click(function() {
+
+    if (x == false){
+    menu.show("slow");
+    x = true;
+    }
+    if (x == true){
+    menu.hide();
+    x = false;
+    }
+
+});//click
+
+$(".lang").click(function() {
+$.getJSON('/change_lang',
+                function(data) {
+                  if(data == "gr"){
+                     $(".lang").text("gr");
+                        en();
+                  }//if
+
+                  else if(data == "en"){
+                     $(".lang").text("en");
+                     gr();
+                  }//elif
+            });//ajax
+
+});//click
+function en(){
+$('#title').text("Olga Nikolopoulou");
+$('a[name="a1"]').text("Main");
+$('a[name="a2"]').text("Resume");
+$('a[name="a3"]').text("Gallery");
+$('a[name="a4"]').text("Contact");
+
+$('a[name="t1"]').text("Main");
+$('a[name="t2"]').text("Resume");
+$('a[name="t3"]').text("Gallery");
+$('a[name="t4"]').text("Contact");
+
+$(".bio_p").text("Olga Nikolopoulou was born in Patras. She studied graphic arts at Doxiadi School and Art with artist Vrasidas Vlachopoulos. Also, she has worked with the Team of Communication and Education in Art. In 1981 she founded the Polyedro with Kostas Kapellas. At last, she has participated in multiple group exhibitions.");
+$("#std1").text("Graphic arts at MDTS School Athens (Former Doxiadi School)");
+$("#std2").text("Management of Cultural Facilities Hellenic Open University");
+
+$("#exh1").text("Olga Nikolopoulou - Art jewelry 2005");
+$("#exh2").text("Olga Nikolopoulou - Patra 1994. Short walk in the city 4-2-1994");
+$("#exh3").text("Grammenos Kornilios, Zigomalas Christos, Kormentza Dimitra, Mpakalou Paraskevi, Mpenetakou Nota, Nikolopoulou Olga, Ikonomidou Florendia 1992");
+$("#exh4").text("Kolokotsa Anastasia - Nikolopoulou Olga - Terxis Nikos February 1990");
+}
+
+function gr(){
+$('#title').text("Όλγα Νικολοπούλου");
+$('a[name="a1"]').text("Αρχική");
+$('a[name="a2"]').text("Βιογραφικό");
+$('a[name="a3"]').text("Έργα");
+$('a[name="a4"]').text("Επικοινωνία");
+
+$('a[name="t1"]').text("Αρχική");
+$('a[name="t2"]').text("Βιογραφικό");
+$('a[name="t3"]').text("Έργα");
+$('a[name="t4"]').text("Επικοινωνία");
+
+$(".bio_p").text("Η Όλγα Νικολοπούλου γεννήθηκε στην Πάτρα. Σπούδασε γραφικές τέχνες στη Σχολή Δοξιάδη και έκανε ζωγραφική στην Αθήνα, δίπλα στο Βρασίδα Βλαχόπουλο και στην Ομάδα για την Επικοινωνία και Εκπαίδευση στην Τέχνη. Από το 1981 έχει ιδρύσει το Πολύεδρο μαζί με τον Κώστα Καπέλλα. Έχει συμμετάσχει σε ομαδικές εκθέσεις.");
+$("#std1").text("Γραφικές Τέχνες στη Θ΄ΜΔΤΣ Αθηνων (πρόην Δοξιάδη)");
+$("#std2").text("Διοίκηση πολιτισμικών Μονάδων Ελληνικό Ανοικτό Πανεπιστήμιο");
+
+$("#exh1").text("Όλγα Νικολοπούλου - Εικαστικό κόσμημα 2005");
+$("#exh2").text("Όλγα Νικολοπούλου - Πάτρα 1994. Σύντομη περιδιάβαση στην πολη 4-2-1994");
+$("#exh3").text("Γραμμένος Κορνήλιος, Ζυγομαλάς Χρήστος, Κορμεντζά Δήμητρα, Μπακάλου Παρασκευή, Μπενετάτου Νότα, Νικολοπούλου Όλγα, Οικονομίδου Φλωρεντία 1992");
+$("#exh4").text("Κολοκοτσά Αναστασία-Νικολοπούλου Όλγα- Τερξής Νίκος Φεβρουάριος 1990");
+}
+
+});//ready
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+body{
+font-family: "Lucida Console", "Courier New", monospace;
+margin: 0px;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: black;
+text-align: right;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.topnav a{
+  color: black;
+  padding: 8px 8px;
+  text-decoration: none;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+
+a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.hero-image{
+width: 100%;
+}
+
+.animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+
+.bio_p{
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.icon_menu{
+ display: none;
+}
+
+.acordeon_menu{
+display: none;
+width: 100%;
+text-align: center;
+}
+
+
+.acordeon_menu span{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+/*responsive img grid*/
+.img_row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+li {
+margin-top: 5px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+/*responsive img grid*/
+
+.gallery_menu{
+text-align: center;
+color: black;
+}
+
+.gallery_menu span{
+margin-right: 2%;
+margin-left: 2%;
+cursor: pointer;
+}
+/*.engraving .jewelry .applications*/
+.paintings, .books, .engraving, .drawing{
+margin-top: 20%;
+display: none;
+padding: 10%;
+}
+
+.books
+#paintings{
+display: none;
+}
+
+/*Modal*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+/*Modal*/
+
+@media only screen and (max-width:990px){
+
+.topnav a{
+  padding: 4px 4px;
+}
+
+}/*@media 990*/
+
+@media only screen and (max-width:766px){
+
+.topnav a, #l2{
+  display: none;
+}
+
+.icon_menu{
+ display: block;
+}
+
+.right-text {
+  text-align: left;
+}
+
+.gallery_menu span{
+display: block;
+margin-top: 2%;
+}
+.hero-image img{
+height:300px;
+}
+}/*@media 766*/
+
+@media only screen and (max-width:375px){
+
+.hero-image img{
+height:200px;
+}
+
+}/*@media 375*/
