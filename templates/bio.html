@@ -55,18 +55,18 @@
 
     </div>
     <div class="col-10">
-        <img id="olga" style="display: none"  width="250" height="250" src="{{url_for('static', filename='images/olga.JPG')}}">
+        <img id="olga" style="display: none"  width="250" height="250" src="{{url_for('static', filename='images/olga.jpg')}}">
             <p class="bio_p">Η Όλγα Νικολοπούλου γεννήθηκε στην Πάτρα. Σπούδασε γραφικές τέχνες στη Σχολή Δοξιάδη και έκανε
                ζωγραφική στην Αθήνα, δίπλα στο Βρασίδα Βλαχόπουλο και στην Ομάδα για την Επικοινωνία και Εκπαίδευση στην
                Τέχνη. Από το 1981 έχει ιδρύσει το Πολύεδρο μαζί με τον Κώστα Καπέλλα. Έχει συμμετάσχει σε ομαδικές
                εκθέσεις.</p>
-        <h4>Σπουδές</h4>
+        <h4 id="std">Σπουδές</h4>
         <ul>
           <li id="std1">Γραφικές Τέχνες στη Θ΄ΜΔΤΣ Αθηνων (πρόην Δοξιάδη)</li>
           <li id="std2">"Διοίκηση πολιτισμικών Μονάδων" Ελληνικό Ανοικτό Πανεπιστήμιο</li>
         </ul>
 
-        <h4>Εκθέσεις</h4>
+        <h4 id="exh">Εκθέσεις</h4>
         <ul>
            <li id="exh1">Όλγα Νικολοπούλου - Εικαστικό κόσμημα 2005</li>
            <li id="exh2">Όλγα Νικολοπούλου "Πάτρα 1994. Σύντομη περιδιάβαση στην πολη" 4-2-1994</li>
@@ -130,6 +130,8 @@ $.getJSON('/change_lang',
 });//click
 function en(){
 $('#title').text("Olga Nikolopoulou");
+$('#std').text("Studies");
+$('#exh').text("Exhibition");
 $('a[name="a1"]').text("Main");
 $('a[name="a2"]').text("Resume");
 $('a[name="a3"]').text("Gallery");
@@ -152,6 +154,8 @@ $("#exh4").text("Kolokotsa Anastasia - Nikolopoulou Olga - Terxis Nikos February
 
 function gr(){
 $('#title').text("Όλγα Νικολοπούλου");
+$('#std').text("Σπουδές");
+$('#exh').text("Εκθέθεις");
 $('a[name="a1"]').text("Αρχική");
 $('a[name="a2"]').text("Βιογραφικό");
 $('a[name="a3"]').text("Έργα");
